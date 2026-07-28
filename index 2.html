@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>ECONCHÉ — Personality Test</title>
+<meta name="description" content="แบบทดสอบ ในทีม Production คุณเหมาะกับงานอะไร? โดยชมรม ECONCHÉ">
+<meta name="theme-color" content="#3d0a10">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="curtain-bg" aria-hidden="true">
+  <div class="curtain-folds"></div>
+  <div class="spotlight"></div>
+  <div class="grain"></div>
+</div>
+
+<div class="stage">
+
+  <!-- ============ HEADER ============ -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <img src="images/logo-econche.jpg" alt="" class="brand-mark-img">
+      </span>
+      <span class="brand-name">ECONCHÉ</span>
+    </div>
+    <div class="topbar-right">
+      <span class="pill" data-th="Personality Test" data-en="Personality Test">Personality Test</span>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" class="lang-btn active" data-lang="th">ไทย</button>
+        <button type="button" class="lang-btn" data-lang="en">English</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="breadcrumb">
+    <span data-th="ECONCHÉ" data-en="ECONCHÉ">ECONCHÉ</span> /
+    <span data-th="FIRST GENERATION" data-en="FIRST GENERATION">FIRST GENERATION</span> /
+    <span data-th="PRODUCTION CLUB" data-en="PRODUCTION CLUB">PRODUCTION CLUB</span> /
+    <span data-th="LIGHTS · CAMERA · CREATE" data-en="LIGHTS · CAMERA · CREATE">LIGHTS · CAMERA · CREATE</span> /
+  </nav>
+
+  <div class="role-strip" aria-hidden="true">
+    <span class="rs" style="--c:var(--writer)"></span>
+    <span class="rs" style="--c:var(--director)"></span>
+    <span class="rs" style="--c:var(--actor)"></span>
+    <span class="rs" style="--c:var(--producer)"></span>
+  </div>
+
+  <!-- ============ CARD ============ -->
+  <main class="card">
+
+    <!-- INTRO SCREEN -->
+    <section class="screen intro-screen" id="screen-intro">
+      <span class="eyebrow">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l2.6 6.6L21 11l-6.4 2.4L12 20l-2.6-6.6L3 11l6.4-2.4L12 2z" fill="currentColor"/></svg>
+        <span data-th="ECONCHÉ · Production" data-en="ECONCHÉ · Production">ECONCHÉ · Production</span>
+      </span>
+      <h1 data-th="ในทีม Production คุณเหมาะกับงานอะไร?" data-en="Which role fits you best in the Production team?">ในทีม Production คุณเหมาะกับงานอะไร?</h1>
+      <p class="lede" data-th="แบบทดสอบนี้จะช่วยบอกว่าคุณเหมาะกับงานใดในทีม production มากที่สุด" data-en="This quiz will help you discover which production role suits you the most.">แบบทดสอบนี้จะช่วยบอกว่าคุณเหมาะกับงานใดในทีม production มากที่สุด</p>
+
+      <div class="meta-row">
+        <span class="meta-chip">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M3 9h18M9 3v18" stroke="currentColor" stroke-width="1.6"/></svg>
+          <span data-th="7 คำถาม" data-en="7 Questions">7 คำถาม</span>
+        </span>
+        <span class="meta-chip">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l2.6 6.6L21 11l-6.4 2.4L12 20l-2.6-6.6L3 11l6.4-2.4L12 2z" stroke="currentColor" stroke-width="1.4" fill="none"/></svg>
+          <span data-th="ข้อละ 4 ตัวเลือก" data-en="4 options each">ข้อละ 4 ตัวเลือก</span>
+        </span>
+      </div>
+
+      <button class="btn-primary" id="btn-start" type="button">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 4l13 8-13 8V4z" fill="currentColor"/></svg>
+        <span data-th="เริ่มทำแบบทดสอบ" data-en="Start the Quiz">เริ่มทำแบบทดสอบ</span>
+      </button>
+    </section>
+
+    <!-- QUIZ SCREEN -->
+    <section class="screen quiz-screen" id="screen-quiz" hidden>
+      <div class="progress-head">
+        <span class="progress-label" data-th="กำลังค้นหาบทบาทของคุณ" data-en="Finding your role">กำลังค้นหาบทบาทของคุณ</span>
+        <span class="progress-count"><span id="q-current">1</span>/<span id="q-total">7</span></span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+
+      <div class="scene-tag">
+        <span class="dash">—</span>
+        <span id="scene-tag-text">SCENE 01 · INSTINCT</span>
+      </div>
+
+      <h2 class="question-text" id="question-text">คำถาม</h2>
+
+      <div class="options" id="options-wrap"></div>
+    </section>
+
+    <!-- RESULT SCREEN -->
+    <section class="screen result-screen" id="screen-result" hidden>
+      <div class="result-top">
+        <div class="result-left">
+          <span class="badge-icon" aria-hidden="true">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="5.4" fill="#3d0a10"/><path d="M8.6 12.6L6.5 21l5.5-3 5.5 3-2.1-8.4" fill="#3d0a10"/><circle cx="12" cy="8" r="5.4" stroke="#3d0a10" stroke-width=".6"/></svg>
+          </span>
+          <span class="result-eyebrow" data-th="บทบาทในกองถ่ายของคุณคือ" data-en="Your role on set is">บทบาทในกองถ่ายของคุณคือ</span>
+          <h2 class="result-role" id="result-role">Writer</h2>
+          <p class="result-desc" id="result-desc">คำอธิบาย</p>
+        </div>
+        <div class="result-right">
+          <div class="qr-card">
+            <img src="images/qr-openchat.jpeg" alt="Econché OpenChat QR Code">
+          </div>
+          <span class="qr-caption" data-th="Econché OpenChat" data-en="Econché OpenChat">Econché OpenChat</span>
+        </div>
+      </div>
+
+      <div class="breakdown">
+        <span class="breakdown-title" data-th="สัดส่วนคำตอบของคุณ" data-en="Your answer breakdown">สัดส่วนคำตอบของคุณ</span>
+        <div class="breakdown-body">
+          <div class="donut-wrap">
+            <div class="donut" id="donut"></div>
+            <div class="donut-center">
+              <span class="donut-pct" id="donut-pct">0%</span>
+              <span class="donut-role" id="donut-role">Writer</span>
+            </div>
+          </div>
+          <div class="legend" id="legend">
+            <div class="legend-item" data-role="writer">
+              <span class="legend-dot"></span>
+              <span class="legend-name" data-th="Writer" data-en="Writer">Writer</span>
+              <span class="legend-pct">0%</span>
+            </div>
+            <div class="legend-item" data-role="director">
+              <span class="legend-dot"></span>
+              <span class="legend-name" data-th="Director" data-en="Director">Director</span>
+              <span class="legend-pct">0%</span>
+            </div>
+            <div class="legend-item" data-role="actor">
+              <span class="legend-dot"></span>
+              <span class="legend-name" data-th="Actor" data-en="Actor">Actor</span>
+              <span class="legend-pct">0%</span>
+            </div>
+            <div class="legend-item" data-role="producer">
+              <span class="legend-dot"></span>
+              <span class="legend-name" data-th="Producer" data-en="Producer">Producer</span>
+              <span class="legend-pct">0%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn-secondary" id="btn-restart" type="button">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4v6h6M20 20v-6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 15a8 8 0 1 0 1-9.5L4 9M18.5 9l1.5 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-th="ทำใหม่" data-en="Retake">ทำใหม่</span>
+      </button>
+    </section>
+
+  </main>
+
+  <footer class="page-footer">
+    <span data-th="© ECONCHÉ Production Club — First Generation" data-en="© ECONCHÉ Production Club — First Generation">© ECONCHÉ Production Club — First Generation</span>
+  </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
